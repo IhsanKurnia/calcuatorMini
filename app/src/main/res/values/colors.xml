@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2B2B2B</color>
+    <color name="colorPrimaryDark">#2B2B2B</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="layar">#666666</color>
+    <color name="kuning">#FFDD5E</color>
+</resources>
