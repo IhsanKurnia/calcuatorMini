@@ -1,11 +1,11 @@
 package com.ihsan_kurnia.calcuatormini;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     //variabel gloabal
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 Solve();
                 jawaban = input;
                 break;
-            case "c":
+            case "⌫":
                 String newText = input.substring(0, input.length() - 1);
                 input = newText;
                 break;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void Solve() {
         if (input.split("\\*").length == 2) {
-            String number[] = input.split("\\*");
+            String[] number = input.split("\\*");
             try {
                 double kali = Double.parseDouble(number[0]) * Double.parseDouble(number[1]);
                 input = kali + "";
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else if (input.split("/").length == 2) {
-            String number[] = input.split("/");
+            String[] number = input.split("/");
             try {
                 double bagi = Double.parseDouble(number[0]) / Double.parseDouble(number[1]);
                 input = bagi + "";
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else if (input.split("\\^").length == 2) {
-            String number[] = input.split("\\^");
+            String[] number = input.split("\\^");
             try {
                 double pow = Math.pow(Double.parseDouble(number[0]), Double.parseDouble(number[1]));
                 input = pow + "";
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else if (input.split("\\+").length == 2) {
-            String number[] = input.split("\\+");
+            String[] number = input.split("\\+");
             try {
                 double tambah = Double.parseDouble(number[0]) + Double.parseDouble(number[1]);
                 input = tambah + "";
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else if (input.split("-").length > 1) { // untuk substarck yang memiliki dua split char di case yaitu -4-6
-            String number[] = input.split("-");
+            String[] number = input.split("-");
             /*Untuk substract negative seperti -8-5*/
             if (number[0] == "" && number.length == 2) {
                 number[0] = 0 + "";
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //untuk menghapus digit terakhir .0 dari hasil integer seperti: 9 sebagai gantinya 9.0
-        String n[] = input.split("\\.");
+        String[] n = input.split("\\.");
         if (n.length > 1) {
             if (n[1].equals("0")) {
                 input = n[0];
